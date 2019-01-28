@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+
 import { CBAViewsService } from '../../services/cba-views.service';
+import { OptionDetails } from '../../models/option.model';
 
 @Component({
   selector: 'app-options',
@@ -8,7 +10,6 @@ import { CBAViewsService } from '../../services/cba-views.service';
   styleUrls: ['./options.component.scss'],
 })
 export class OptionsComponent implements OnInit {
-  optionsDetails;
   dataSource;
   displayedColumns: string[] = [
     'code',
@@ -23,13 +24,18 @@ export class OptionsComponent implements OnInit {
   constructor(private viewsService: CBAViewsService) {}
 
   ngOnInit() {
-    this.viewsService.getOptions().subscribe(options => {
+    this._populateOptions();
+  }
+
+  private _populateOptions() {
+    this.viewsService.getOptions().subscribe((options: OptionDetails[]) => {
       this.dataSource = new MatTableDataSource(
-        this.transformTableData(options),
+        this._transformTableData(options),
       );
     });
   }
-  private transformTableData(optionsDetails: any): any {
+
+  private _transformTableData(optionsDetails: OptionDetails[]): any {
     let rows = [];
     optionsDetails.forEach(optionDetail => {
       rows.push({ expiryDate: optionDetail.expiryDate, isGroupBy: true });
@@ -37,6 +43,7 @@ export class OptionsComponent implements OnInit {
     });
     return rows;
   }
+
   isGroup(index, item): boolean {
     return item.isGroupBy;
   }

@@ -1,12 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
 
-
+/* Material css overrides */
 table {
   width: 100%;
-  td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  td.mat-cell,
+  td.mat-footer-cell,
+  th.mat-header-cell {
     text-transform: uppercase;
     font-size: 14px;
   }
@@ -20,19 +28,36 @@ table {
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-underline {
-  bottom: .80em;
+  bottom: 0.8em;
 }
 
 .wrapper-fluid .mat-elevation-z8.mat-table {
-  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 0 0 0 white;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 0 0 0 white;
+}
+
+.mat-form-field-type-mat-select {
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+    margin-top: 0;
+  }
+  .mat-form-field-underline {
+    display: none;
+  }
+}
+.mat-form-field-type-mat-select.mat-form-field-should-float {
+  .mat-form-field-wrapper {
+    margin-top: 8px;
+  }
 }
 
 .mat-ink-bar {
   display: none;
 }
 
+/* Common css rules */
 .clearfix::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -42,7 +67,7 @@ table {
   border-radius: 5px 5px 0 0;
   padding: 0 20px;
   min-height: 60px;
-  border-bottom: 1px solid rgba(0,0,0,.12);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   .heading-content {
     float: left;
     margin-top: 20px;
@@ -50,5 +75,5 @@ table {
 }
 
 .mat-tab-body-content {
-  border: 1px solid rgba(0,0,0,.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }

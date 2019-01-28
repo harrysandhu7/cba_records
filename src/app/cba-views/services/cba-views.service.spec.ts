@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 
-import { CBAViewsService } from './cba-views.service';
 import { of } from 'rxjs';
 import { HttpErrorHandler } from './http-error-handler.service';
 
+import { CBAViewsService } from './cba-views.service';
 import {mockData} from './cba-views.data';
 
 class MockHttp {
@@ -46,7 +46,7 @@ describe('ViewsService', () => {
     spyOn(http, 'get').and.returnValue(of({ default: { filter: mockData.filter } }));
 
     service.getFilters().subscribe(result => {
-      expect(result).toEqual(mockData.filter);
+      expect(result).toEqual(<any> jasmine.arrayContaining(mockData.filter));
     });
   });
 
