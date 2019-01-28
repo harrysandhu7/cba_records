@@ -1,0 +1,12 @@
+.outer-wrapper {
+  background-color: #f3f3f3;
+  min-height: 100%;
+
+  .wrapper-fluid {
+    width: 90%;
+    margin: 0 auto;
+    /deep/ .mat-tab-header {
+      border: none;
+    }
+  }
+}

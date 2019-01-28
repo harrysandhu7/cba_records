@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+table {
+  width: 100%;
+  td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+  td.mat-cell:first-of-type {
+    color: #057ab8;
+  }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 14px;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  bottom: .80em;
+}
+
+.wrapper-fluid .mat-elevation-z8.mat-table {
+  box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 0 0 0 white;
+}
+
+.mat-ink-bar {
+  display: none;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.heading-wrapper {
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+  padding: 0 20px;
+  min-height: 60px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  .heading-content {
+    float: left;
+    margin-top: 20px;
+  }
+}
+
+.mat-tab-body-content {
+  border: 1px solid rgba(0,0,0,.12);
+}
